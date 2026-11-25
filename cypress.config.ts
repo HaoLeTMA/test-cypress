@@ -1,7 +1,7 @@
 import { defineConfig } from 'cypress'
 
 export default defineConfig({
-  // Loaded from .env by the npm scripts (node --env-file-if-exists=.env).
+  // From .env locally (npm scripts load it) and from the CYPRESS_PROJECT_ID repository variable in CI.
   projectId: process.env.CYPRESS_PROJECT_ID,
   video: false,
   allowCypressEnv: false,
