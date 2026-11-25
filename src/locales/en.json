@@ -1,0 +1,60 @@
+{
+  "appTitle": "Product Manager",
+  "save": "Save",
+  "cancel": "Cancel",
+  "edit": "Edit",
+  "delete": "Delete",
+  "category": {
+    "electronics": "Electronics",
+    "accessories": "Accessories",
+    "furniture": "Furniture",
+    "books": "Books"
+  },
+  "error": {
+    "generic": "Something went wrong. Please try again."
+  },
+  "product": {
+    "searchTitle": "Products",
+    "createTitle": "Create product",
+    "editTitle": "Edit product",
+    "createButton": "Create product",
+    "loadError": "Could not load products.",
+    "search": {
+      "keyword": "Search by name",
+      "category": "Category",
+      "allCategories": "All categories"
+    },
+    "table": {
+      "name": "Name",
+      "category": "Category",
+      "price": "Price",
+      "stock": "Stock",
+      "actions": "Actions",
+      "empty": "No products found",
+      "outOfStock": "Out of stock"
+    },
+    "form": {
+      "name": "Name",
+      "price": "Price",
+      "category": "Category",
+      "stock": "Stock"
+    },
+    "validation": {
+      "nameRequired": "Name is required",
+      "nameMin": "Name must be at least 3 characters",
+      "nameMax": "Name must be at most 50 characters",
+      "pricePositive": "Price must be greater than 0",
+      "categoryRequired": "Category is required",
+      "stockInteger": "Stock must be a whole number of 0 or more"
+    },
+    "delete": {
+      "title": "Delete product",
+      "message": "Are you sure you want to delete \"{{name}}\"?"
+    },
+    "notification": {
+      "created": "Product created",
+      "updated": "Product updated",
+      "deleted": "Product deleted"
+    }
+  }
+}
