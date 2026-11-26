@@ -5,6 +5,11 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+    inputs:
+      run_tests:
+        description: 'Run Cypress component tests'
+        type: boolean
+        default: false
 
 concurrency:
   group: ci-${{ github.ref }}
@@ -32,6 +37,8 @@ jobs:
   component-tests:
     name: Component tests (runner ${{ matrix.runner }})
     needs: build
+    # Only when started from "Run workflow" with the run_tests box ticked.
+    if: inputs.run_tests
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -54,7 +61,7 @@ jobs:
         env:
           CYPRESS_PROJECT_ID: ${{ vars.CYPRESS_PROJECT_ID }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-        # Cypress Cloud load-balances the specs across both runners; the ci-build-id comes from the GitHub run.
+        # Cypress Cloud load-balances the specs across the matrix runners; the ci-build-id comes from the GitHub run.
         run: npx cypress run --component --record --parallel --group component
       - name: Upload screenshots of failed tests
         if: failure()
