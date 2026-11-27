@@ -12,7 +12,7 @@ const SearchProduct = () => {
   const { t } = useTranslation()
   const { filter, products, isLoading, isError, handleKeywordChange, handleCategoryChange } = useProductSearch()
   const { selectedProduct, isDeleting, openDeleteDialog, closeDeleteDialog, confirmDelete } = useDeleteProduct()
-  console.log('test')
+  
   return (
     <Stack spacing={3}>
       <Stack direction="row" justifyContent="space-between" alignItems="center">
